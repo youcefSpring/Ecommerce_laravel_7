@@ -61,16 +61,16 @@
         }
     </style>
 </head>
-<body class="vertical-layout vertical-menu 2-columns  @if(Request::is('admin/users/tickets/reply*')) chat-application @endif menu-expanded fixed-navbar"
+<body class="vertical-layout vertical-menu 2-columns  menu-expanded fixed-navbar"
       data-open="click" data-menu="vertical-menu" data-col="2-columns">
 <!-- fixed-top-->
-@include('admin.includes.header')
+@include('Dashboard.includes.header')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
-@include('admin.includes.sidebar')
+@include('Dashboard.includes.sidebar')
 
 @yield('content')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
-@include('admin.includes.footer')
+@include('Dashboard.includes.footer')
 
 @notify_js
 @notify_render
