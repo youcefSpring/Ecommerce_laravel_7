@@ -100,7 +100,7 @@
    
    
                <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
-                                                                                       data-i18n="nav.templates.main">الاعدادات</span></a>
+                                                                                       data-i18n="nav.templates.main">{{ __('admin.sidebar.settings')}}</span></a>
                    <ul class="menu-content">
                        <li><a class="menu-item" href="" data-i18n="nav.templates.vert.main">وسائل التوصيل</a>
                            <ul class="menu-content">
