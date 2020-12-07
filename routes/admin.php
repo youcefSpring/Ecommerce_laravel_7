@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\LaravelLocalization;
 
-// Route::group(
-//     [
-//         'prefix' => 'LaravelLocalization::setLocale()',
-//         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-//     ], function(){ 
+Route::group(
+    [
+        'prefix' => (new Mcamara\LaravelLocalization\LaravelLocalization)->setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){ 
 
       
 
@@ -28,4 +28,4 @@ Route::group(['namespace' => 'Dashboard' ,'middleware'=> 'guest:admin','prefix'=
     
 });
 
-// });
+ });

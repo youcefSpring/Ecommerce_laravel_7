@@ -4,7 +4,9 @@
 return [
 
 
-'settings' => 'settings'
+'settings' => 'settings',
+'shipping methods' => 'Shipping Methods',
+'free shipping'=> ' Free Shipping',
 
 ];
 
