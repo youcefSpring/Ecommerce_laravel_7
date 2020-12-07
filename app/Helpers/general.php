@@ -1,7 +1,7 @@
 <?php
 
 function getFolder(){
-    return app()->getLocale() == 'en' ?'css-rtl' : 'css';
+    return app()->getLocale() == 'ar' ?'css-rtl' : 'css';
 }
 
 

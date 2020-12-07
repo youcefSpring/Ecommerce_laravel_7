@@ -5,7 +5,8 @@ return [
 
 //key with translation
 'settings' => 'الاعدادات',
-'shipping methods' => 'وسائل التوصيل'
+'shipping methods' => 'وسائل التوصيل',
+'free shipping' => 'توصيل مجاني',
 
 ];
 
