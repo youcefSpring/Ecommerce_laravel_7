@@ -1,6 +1,8 @@
 <?php
 
 /**
+ *
+ * dfdfdfdfhdfhdfhd
  * Laravel - A PHP Framework For Web Artisans
  *
  * @package  Laravel
@@ -21,7 +23,7 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +34,10 @@ require __DIR__.'/../vendor/autoload.php';
 | This bootstraps the framework and gets it ready for use, then it
 | will load up this application so that we can run it and send
 | the responses back to the browser and delight our users.
-|
+|//master
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
