@@ -14,6 +14,7 @@ class SettingsController extends Controller
         if($type === 'free')
         {
             $shipping=Setting::where('key', 'free_shipping_label')->first();
+            // return $shipping;
         }
         elseif($type === 'inner')
         {
@@ -27,11 +28,18 @@ class SettingsController extends Controller
         {
             $shipping=Setting::where('key', 'free_shipping_label')->first();
         }
+        // dump($shipping->plain_value);
         return view('Dashboard.settings.shippings.edit' , compact('shipping'));
     }
 
-    public function updateShippings(AdminLoginRequest $request , $id)
+    public function updateShippings(Request $request , $id)
     {
-
+    //   $settiing =Setting::find($id);
+    //   dd($settiing);
+    //   $settiing->key = $request->input('key');
+    //   $settiing->plain_value=$request->input('name');
+    //   $settiing->save();
+    //  dump($settiing);
+      return  $request;
     }
 }

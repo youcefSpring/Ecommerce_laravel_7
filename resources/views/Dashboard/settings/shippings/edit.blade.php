@@ -44,7 +44,7 @@
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     <form class="form" action="{{ route('updateShippingSetting',$shipping->id) }}"
-                                          method="PUT"
+                                          method="POST"
                                           enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
@@ -59,49 +59,29 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1"> القيمة </label>
-                                                        <input type="text" value="{{ $shipping->value }}" id="value"
+                                                        <label for="projectinput1">   الاسم </label>
+                                                        <input type="text" value="{{ $shipping->key }}" id="key"
                                                                class="form-control"
-                                                               placeholder="{{ $shipping->value }}  "
-                                                               name="value">
-                                                        
+                                                               placeholder="{{ $shipping->key }}  "
+                                                               name="key">
+                                                        @error('plain_value')
+                                                            {{-- <span class="text-danger">{{ $message }}<span --}}
+                                                        @enderror
                                                     </div>
                                                 </div>
-
+                                                
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1"> المالك </label>
-                                                        <input type="text" value="{{ $shipping->value }}" id="name"
+                                                        <label for="projectinput1"> قيمة التوصيل </label>
+                                                        <input type="number" value="{{ $shipping->plain_value }}" id="name"
                                                                class="form-control"
-                                                               placeholder=" {{ $shipping->value }} "
+                                                               placeholder=" {{ $shipping->plain_value }} "
                                                                name="name">
                                                         
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                             
-
-
-                                            <div class="row">
-                                                <div class="class col-12">
-                                                    <div class="form-group">
-                                                        <label for="projectinput1">كلمة المرور  </label>
-                                                        <input type="text" id="password"
-                                                               class="form-control"
-                                                               placeholder="{{ $shipping->value }}" name="password">
-
-                                                        @error("password")
-                                                        <span class="text-danger"> </span>
-                                                        @enderror
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                         
                                             
                                         <div class="form-actions">
                                             <button type="button" class="btn btn-warning mr-1"
