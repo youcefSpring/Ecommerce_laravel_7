@@ -10,6 +10,7 @@ class Setting extends Model
     use Translatable;
     protected $with=['translations'];
 
+    //responsable du traduction
    protected  $translatedAttributes=['value'];
 
     protected $fillable=['key', 'is_translatable', 'plain_value'];
