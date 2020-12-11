@@ -13,7 +13,7 @@ class ShippingRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class ShippingRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' =>'required|exists:settings',
+            'plain_value' =>'required|numeric|nullable',
+            'key'=>'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'id.required' => 'خانة اجبارية',
+            'plain_value.required' => 'خانة اجبارية',
+            'key.required' => 'خانة اجبارية',
+
         ];
     }
 }

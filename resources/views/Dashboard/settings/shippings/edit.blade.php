@@ -35,7 +35,7 @@
                                         <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
                                         <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                                         <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                        {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -64,8 +64,8 @@
                                                                class="form-control"
                                                                placeholder="{{ $shipping->key }}  "
                                                                name="key">
-                                                        @error('plain_value')
-                                                            {{-- <span class="text-danger">{{ $message }}<span --}}
+                                                        @error('key')
+                                                            <span class="text-danger">{{ $message }}<span>
                                                         @enderror
                                                     </div>
                                                 </div>
@@ -76,7 +76,10 @@
                                                         <input type="number" value="{{ $shipping->plain_value }}" id="name"
                                                                class="form-control"
                                                                placeholder=" {{ $shipping->plain_value }} "
-                                                               name="name">
+                                                               name="plain_value">
+                                                               @error('plain_value')
+                                                            <span class="text-danger">{{ $message }}<span>
+                                                        @enderror
                                                         
                                                     </div>
                                                 </div>
