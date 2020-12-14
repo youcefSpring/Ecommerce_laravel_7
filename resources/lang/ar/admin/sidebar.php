@@ -6,7 +6,13 @@ return [
 //key with translation
 'settings' => 'الاعدادات',
 'shipping methods' => 'وسائل التوصيل',
-'free shipping' => 'توصيل مجاني',
+'freeshipping' => 'توصيل مجاني',
+'innershipping' => 'توصيل داخلي',
+'outershipping' => 'توصيل خارجي',
+
+'langue' => 'اللغات',
+'arabe' => 'اللغة العربية',
+'english'=> 'اللغة الانجليزية'
 
 ];
 

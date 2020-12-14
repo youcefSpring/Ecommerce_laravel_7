@@ -105,23 +105,23 @@
                        <li><a class="menu-item" href="" data-i18n="nav.templates.vert.main">{{__('admin/sidebar.shipping methods')}}</a>
                            <ul class="menu-content">
                                <li><a class="menu-item" href="{{ route('editShippingSetting', 'free') }}"
-                                      data-i18n="nav.templates.vert.classic_menu"> {{__('admin/sidebar.free shipping')}}</a>
+                                      data-i18n="nav.templates.vert.classic_menu"> {{__('admin/sidebar.freeshipping')}}</a>
                                </li>
-                               <li><a class="menu-item" href="{{ route('editShippingSetting', 'inner') }}">توصيل داخلي</a>
+                               <li><a class="menu-item" href="{{ route('editShippingSetting', 'inner') }}"> {{__('admin/sidebar.innershipping')}}</a>
                                </li>
                                <li><a class="menu-item" href="{{ route('editShippingSetting', 'outer') }}"
-                                      data-i18n="nav.templates.vert.compact_menu">توصيل خارجي</a>
+                                      data-i18n="nav.templates.vert.compact_menu">{{__('admin/sidebar.outershipping')}}</a>
                                </li>
                                
                            </ul>
                        </li>
-                       <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">اللغات</a>
+                       <li><a class="menu-item" href="#" data-i18n="nav.templates.horz.main">{{__('admin/sidebar.langue')}}</a>
                            <ul class="menu-content">
                                <li><a class="menu-item" href="../horizontal-menu-template"
-                                      data-i18n="nav.templates.horz.classic">لعربية</a>
+                                      data-i18n="nav.templates.horz.classic">{{__('admin/sidebar.arabe')}}</a>
                                </li>
                                <li><a class="menu-item" href="../horizontal-menu-template-nav"
-                                      data-i18n="nav.templates.horz.top_icon">الانجليزية</a>
+                                      data-i18n="nav.templates.horz.top_icon">{{__('admin/sidebar.english')}}</a>
                                </li>
                            </ul>
                        </li>

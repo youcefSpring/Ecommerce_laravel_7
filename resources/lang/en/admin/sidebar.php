@@ -6,7 +6,12 @@ return [
 
 'settings' => 'settings',
 'shipping methods' => 'Shipping Methods',
-'free shipping'=> ' Free Shipping',
+'freeshipping'=> ' Free Shipping',
+'innershipping' => 'Inner Shipping',
+'outershipping' => 'Outer Shipping',
+'langue' => 'Languages',
+'arabe' => 'َArabic',
+'english'=> 'English'
 
 ];
 
