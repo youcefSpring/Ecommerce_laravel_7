@@ -20,6 +20,12 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::get('shipping-methods/{type}','SettingsController@editShippings')->name('editShippingSetting');
         Route::put('shipping-methods/{id}','SettingsController@updateShippings')->name('updateShippingSetting');
     });
+
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('edit','ProfileController@editProfile')->name('admin.editProfile');
+        Route::put('update','ProfileController@updateProfile')->name('admin.updateProfile');
+        
+    });
     
 });
 
