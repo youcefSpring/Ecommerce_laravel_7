@@ -9,8 +9,8 @@ class CreateTableTranslationsSetting extends Migration
     public function up()
     {
         Schema::create('setting_translations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-           $table->bigIncrements('setting_id')->unsigned();
+            $table->bigInteger('id')->unsigned();
+           $table->bigInteger('setting_id')->unsigned();
            $table->string('locale');
            $table->longText('value')->nullable();
 
