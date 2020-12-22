@@ -10,7 +10,10 @@ Route::get('/', function () {
 });
 Route::get('test', function () {
     // return view('layouts.admin');
-    return (\App\Models\Setting::find(5));
+
+    $categry=\App\Models\Category::find(5);
+    $categry->makeVisible(['translations']);
+    return ($categry);
 });
 
 Route::get('/clear-cache', function() {

@@ -22,10 +22,29 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
     });
 
     Route::group(['prefix' => 'profile'], function () {
+        Route::get('/','MainCategoriesController@index')->name('MainCategoriesList');
+
+        Route::get('create','MainCategoriesController@create')->name('MainCategoriesCreate');
+
+        Route::post('store','MainCategoriesController@store')->name('MainCategoriesStore');
+
+        Route::get('edit/{id}','MainCategoriesController@edit')->name('MainCategoriesEdit');
+
+        Route::post('update/{id}','MainCategoriesController@update')->name('MainCategoriesUpdate');
+
+        Route::get('delete/{id}','MainCategoriesController@delete')->name('MainCategoriesDelete');
+
+        Route::get('changeStatus','MainCategoriesController@changeStatus')->name('MainCategoriesChangeStatus');
+
+        
+    });
+    ###################### Categories Route ###############################
+    Route::group(['prefix' => 'main_categories'], function () {
         Route::get('edit','ProfileController@editProfile')->name('admin.editProfile');
         Route::put('update','ProfileController@updateProfile')->name('admin.updateProfile');
         
     });
+    ##################### end Categories Routes ##########################
     
 });
 
