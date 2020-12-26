@@ -21,7 +21,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         Route::put('shipping-methods/{id}','SettingsController@updateShippings')->name('updateShippingSetting');
     });
 
-    Route::group(['prefix' => 'profile'], function () {
+    Route::group(['prefix' => 'categories'], function () {
         Route::get('/','MainCategoriesController@index')->name('MainCategoriesList');
 
         Route::get('create','MainCategoriesController@create')->name('MainCategoriesCreate');
