@@ -22,4 +22,9 @@ class Category extends Model
     protected $casts=[
           'is_active' => 'boolean'
     ];
+
+
+    public function getActive(){
+        return $this->is_active == 0 ? 'غير مفعل ' : 'مفعل';
+    }
 }

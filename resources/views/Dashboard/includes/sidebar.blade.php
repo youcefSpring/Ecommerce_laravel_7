@@ -21,6 +21,7 @@
                        </li>
                    </ul>
                </li>
+              
    
    
                <li class="nav-item"><a href=""><i class="la la-group"></i>
@@ -83,7 +84,12 @@
                        </li>
                    </ul>
                </li>
-   
+               <li class="nav-item  open ">
+                <a href="{{ route('MainCategoriesList') }}"><i class="la la-home"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">الاصناف   </span>
+                </a>
+               
+            </li>
    
                <li class="nav-item">
                    <a href=""><i class="la la-male"></i>
