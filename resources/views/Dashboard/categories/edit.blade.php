@@ -10,7 +10,7 @@
             <!-- Basic form layout section start -->
             <section id="basic-form-layouts">
                 <div class="row match-height">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title" id="basic-layout-form"> تعديل التصنيف </h4>
@@ -62,7 +62,7 @@
                                                       <span class="text-danger">{{ $message }}</span>
                                                   @enderror
                                               </div>
-                                              <div></div>
+                                            
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -77,22 +77,40 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="col-md-6">
+                                              
+                                            </div>
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="projectinput1">  الاسم بالرابط </label>
+                                                    <input type="text" value="{{ $category->slug }}" id="slug"
+                                                           class="form-control"
+                                                           placeholder=" {{ $category->slug }} "
+                                                           name="slug">
+                                                           @error('slug')
+                                                        <span class="text-danger">{{ $message }}<span>
+                                                    @enderror
+                                                    
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mt-1">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">  الاسم بالرابط </label>
-                                                        <input type="number" value="{{ $category->slug }}" id="slug"
-                                                               class="form-control"
-                                                               placeholder=" {{ $category->slug }} "
-                                                               name="slug">
-                                                               @error('slug')
+                                                        <label for="projectinput1">   الحالة </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <input type="checkbox" value="1" id="is_active"
+                                                               class="switchery" data-color="success"
+                                                                 name="is_active"
+                                                                 @if ($category->is_active == 1)
+                                                                     checked
+                                                                 @endif
+                                                                 >
+                                                        @error('is_active')
                                                             <span class="text-danger">{{ $message }}<span>
                                                         @enderror
-                                                        
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                            
                                         <div class="form-actions">
                                             <button type="button" class="btn btn-warning mr-1"
                                                     onclick="history.back();">

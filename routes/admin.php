@@ -30,7 +30,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
         Route::get('edit/{id}','MainCategoriesController@edit')->name('MainCategoriesEdit');
 
-        Route::post('update/{id}','MainCategoriesController@update')->name('MainCategoriesUpdate');
+        Route::put('update/{id}','MainCategoriesController@update')->name('MainCategoriesUpdate');
 
         Route::get('delete/{id}','MainCategoriesController@delete')->name('MainCategoriesDelete');
 
@@ -39,7 +39,7 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
         
     });
     ###################### Categories Route ###############################
-    Route::group(['prefix' => 'main_categories'], function () {
+    Route::group(['prefix' => 'profile'], function () {
         Route::get('edit','ProfileController@editProfile')->name('admin.editProfile');
         Route::put('update','ProfileController@updateProfile')->name('admin.updateProfile');
         
