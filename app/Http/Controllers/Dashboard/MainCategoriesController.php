@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MainCategroyRequest;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use Exception;
 
 class MainCategoriesController extends Controller
 {
@@ -72,5 +72,26 @@ class MainCategoriesController extends Controller
         return redirect()->route('MainCategoriesList')->with(['error'=> 'حدث خطا ما ']); 
        }
 
+    }
+
+
+    public function create()
+    {
+        return view('Dashboard.categories.create'); 
+    }
+
+    public function store(MainCategroyRequest $request){
+
+        try{
+           DB::beginTransaction();
+
+
+           DB::commit();
+
+        }
+
+        catch(Exception $e){
+            DB::rollback();
+        }
     }
 }
