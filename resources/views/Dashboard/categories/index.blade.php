@@ -51,7 +51,7 @@
                                         <th>{{ $category->name }}</th>
                                         <th>{{ $category->slug }}</th>
                                         <th>{{ $category->getActive() }}</th>
-                                        <th><img style="width: 150px; height: 100px;" src= "" ></th>
+                                        <th><img style="width: 150px; height: 100px;" src="{{ url("public\\images\\".$category->image) }}"/></th>
                                         <th>
                                             <div class="btn-group" role="group" aria-label="Basic Example">
                                                 <a href="{{ route('MainCategoriesEdit',$category->id) }}"

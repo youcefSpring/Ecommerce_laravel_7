@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MainCategroyRequest;
 use App\Models\Category;
 use Exception;
-
+use Illuminate\Support\Facades\DB;
 class MainCategoriesController extends Controller
 {
     public function index(){
-       $categories= Category::where('parent_id', NULL)->paginate(PAGINATION_COUNT);
+       $categories= Category::where('parent_id', NULL)->orderBy('id','DESC')->paginate(PAGINATION_COUNT);
     //    return $categories;
        return view('Dashboard.categories.index',compact('categories'));
     }
@@ -82,16 +82,42 @@ class MainCategoriesController extends Controller
 
     public function store(MainCategroyRequest $request){
 
+      
+        if(! $request->has('photo')){
+            return redirect()->back()->with(['error'=> '  الصورة اجبارية ']);  
+        }
+
+        
+
         try{
+
            DB::beginTransaction();
 
+           if(! $request->has('is_active')){
+            $request->request->add(['is_active'=> '0']);
+        }
+        else{
+            $request->request->add(['is_active'=> '1']);
+        }
 
+        
+        $image = time().'.'.$request->photo->extension();  
+   
+        $request->photo->move(public_path('images'), $image);
+        $request->request->add(['image'=> $image]);
+        
+           $category=Category::create($request->except('_token'));
+           $category->name=$request->name;
+           $category->save();
+         
+           return redirect()->route('MainCategoriesList')->with(['success'=> '  تمت الاضافة بنجاح ']);  
            DB::commit();
 
         }
 
         catch(Exception $e){
             DB::rollback();
+            return redirect()->route('MainCategoriesCreate')->with(['error'=> 'حدث خطا ما ']);
         }
     }
 }
