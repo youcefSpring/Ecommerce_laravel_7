@@ -41,6 +41,7 @@
                                         <th>صورة القسم</th>
                                         <th>الاجراءات</th>
                                         
+                                        
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -84,3 +85,4 @@
 </div>
 
 @endsection
+
