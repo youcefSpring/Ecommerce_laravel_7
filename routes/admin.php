@@ -38,6 +38,23 @@ Route::group(['namespace' => 'Dashboard' , 'middleware'=> 'auth:admin', 'prefix'
 
         
     });
+    Route::group(['prefix' => 'sub_categories'], function () {
+        Route::get('/','SubCategoriesController@index')->name('SubCategoriesList');
+
+        Route::get('create','SubCategoriesController@create')->name('SubCategoriesCreate');
+
+        Route::post('store','SubCategoriesController@store')->name('SubCategoriesStore');
+
+        Route::get('edit/{id}','SubCategoriesController@edit')->name('SubCategoriesEdit');
+
+        Route::put('update/{id}','SubCategoriesController@update')->name('SubCategoriesUpdate');
+
+        Route::get('delete/{id}','SubCategoriesController@delete')->name('SubCategoriesDelete');
+
+        Route::get('changeStatus','SubCategoriesController@changeStatus')->name('SubCategoriesChangeStatus');
+
+        
+    });
     ###################### Categories Route ###############################
     Route::group(['prefix' => 'profile'], function () {
         Route::get('edit','ProfileController@editProfile')->name('admin.editProfile');
