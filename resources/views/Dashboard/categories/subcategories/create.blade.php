@@ -13,7 +13,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> تعديل التصنيف </h4>
+                                <h4 class="card-title" id="basic-layout-form"> انشاء قسم فرعي جديد  </h4>
                                 <a class="heading-elements-toggle"><i
                                         class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
@@ -29,28 +29,22 @@
                             @include('Dashboard.includes.alerts.errors')
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form" action="{{ route('MainCategoriesUpdate',$category->id) }}"
+                                    <form class="form" action="{{ route('MainCategoriesStore')}}"
                                           method="POST"
                                           enctype="multipart/form-data">
                                         @csrf
-                                        @method('PUT')
+                                      
 
-                                         <input type="hidden" name="id" value="{{ $category->id }}">
+                                          <input type="hidden" name="id" value="">
                                           
                                 
                                     
                                 
                                         <div class="form-body">
 
-                                            <h4 class="form-section"><i class="ft-home"></i> بيانات التصنيف </h4>
+                                            <h4 class="form-section"><i class="ft-home"></i> بيانات القسم الفرعي الجديد  </h4>
 
-                                            <div class="form-group">
-                                                <div class="text-center">
-                                                    <img src="{{ $category->photo }}"
-                                                    class="rounded-circle height-150"
-                                                    alt="صورة القسم ">
-                                                </div>
-                                              </div>
+                                            
                                               <div class="form-group">
                                                   <label >صورة القسم </label>
                                                   <label id="projectinput7" class="file center-block">
@@ -62,14 +56,14 @@
                                                       <span class="text-danger">{{ $message }}</span>
                                                   @enderror
                                               </div>
-                                            
+                                             
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="projectinput1">   الاسم </label>
-                                                        <input type="text" value="{{ $category->name }}" id="name"
+                                                        <input type="text" value="{{ old('name') }}" id="name"
                                                                class="form-control"
-                                                               placeholder="{{ $category->key }}  "
+                                                               placeholder="الاسم  "
                                                                name="name">
                                                         @error('name')
                                                             <span class="text-danger">{{ $message }}<span>
@@ -80,12 +74,26 @@
                                               
                                             </div>
                                             <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="projectinput1">   اسم الفرع الاصلي  </label>
+                                                        <br>
+                                                    <select name="parent" id="parent">
+                                                        @foreach ($categories as $item)
+                                                            <option>{{ $item->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                       
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="projectinput1">  الاسم بالرابط </label>
-                                                    <input type="text" value="{{ $category->slug }}" id="slug"
+                                                    <label for="projectinput1">  الاسم بالرابط  </label>
+                                                    <input type="text" value="{{ old('slug') }} " id="slug"
                                                            class="form-control"
-                                                           placeholder=" {{ $category->slug }} "
+                                                           placeholder="  بالرابط"
                                                            name="slug">
                                                            @error('slug')
                                                         <span class="text-danger">{{ $message }}<span>
@@ -101,9 +109,7 @@
                                                         <input type="checkbox" value="1" id="is_active"
                                                                class="switchery" data-color="success"
                                                                  name="is_active"
-                                                                 @if ($category->is_active == 1)
-                                                                     checked
-                                                                 @endif
+                                                                
                                                                  >
                                                         @error('is_active')
                                                             <span class="text-danger">{{ $message }}<span>
@@ -131,9 +137,4 @@
         </div>
     </div>
 </div>
-
-<div class="buttons">
-    <button class="button is-primary">Primary</button>
-    <button class="button is-link">Link</button>
-  </div>
 @stop
