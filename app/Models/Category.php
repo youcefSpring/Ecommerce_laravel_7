@@ -15,7 +15,7 @@ class Category extends Model
     //responsable du traduction
    protected  $translatedAttributes=['name'];
 
-    protected $fillable=['parent_id', 'slug', 'is_active'];
+    protected $fillable=['parent_id', 'slug', 'is_active','image','name'];
 
     protected $hidden=['translations'];//pour cacher la translation
 
