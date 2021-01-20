@@ -81,7 +81,8 @@ class MainCategoriesController extends Controller
     }
 
     public function store(MainCategroyRequest $request){
-
+       
+   
       
         if(! $request->has('photo')){
             return redirect()->back()->with(['error'=> '  الصورة اجبارية ']);  
@@ -105,11 +106,21 @@ class MainCategoriesController extends Controller
    
         $request->photo->move(public_path('images'), $image);
         $request->request->add(['image'=> $image]);
+
         
-           $category=Category::create($request->except('_token'));
-           $category->name=$request->name;
+       
+        
+        //    $category=\App\Models\Category::create($request->except(['_token','parent_id']));
+        $category=new \App\Models\Category();
+        
+        $category->name="Youcef";
+        $category->slug=$request->slug;
+        $category->image= $request->image;
+        $category->is_active =$request->is_active;
+        $category->parent_id=NULL;
+    
            $category->save();
-         
+         dd($category);
            return redirect()->route('MainCategoriesList')->with(['success'=> '  تمت الاضافة بنجاح ']);  
            DB::commit();
 

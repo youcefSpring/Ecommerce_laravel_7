@@ -36,10 +36,7 @@
                                       
 
                                           <input type="hidden" name="id" value="">
-                                          
-                                
-                                    
-                                
+                                         
                                         <div class="form-body">
 
                                             <h4 class="form-section"><i class="ft-home"></i> بيانات القسم الجديد  </h4>
